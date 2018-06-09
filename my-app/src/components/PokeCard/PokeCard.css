@@ -1,0 +1,25 @@
+.card {
+  background: #fff;
+  border-radius: 2px;
+  flex: 1 5 20%; /* explanation below */
+  margin: 1rem;
+  padding: 10px;
+  position: relative;
+  box-shadow: 0 3px 6px #999, 0 3px 6px rgb(75, 150, 211);
+}
+
+.card > .img-container {
+  flex: 1 5 20%; /* explanation below */
+  align-self: center;
+  background: white;
+}
+.card > .img-container > img {
+  align-content: center;
+  flex: 1 5 20%; /* explanation below */
+}
+
+.card > .content {
+  flex: 1 5 20%; /* explanation below */
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
