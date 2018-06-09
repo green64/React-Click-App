@@ -7,6 +7,7 @@ import PokeCard from "./components/PokeCard";
 import pokes from "./pokes.json";
 
 const App = () => (
+  <div>
   <Wrapper>
     <Title>Click-a-Pokémon</Title>
     <PokeCard
@@ -57,10 +58,12 @@ const App = () => (
       name={pokes[11].name}
       image={pokes[11].image}
     />
-    <Footer
-      image={pokes[12].image}
-    />
   </Wrapper>
+  <Footer backgroundImage={pokes[12].image}>
+  <h1>&nbsp;</h1>
+  <h1>&nbsp;</h1>
+  </Footer>
+  </div>
 );
 
 

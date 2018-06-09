@@ -1,5 +1,5 @@
 # Click-a-Pokémon App
-[Click-a-Pokémon app](https://green64.github.io/React-Click-App/)
+[Click-a-Pokémon app (https://nameless-garden-27229.herokuapp.com/)
 
 This app uses React to create a game that counts and reacts to user input.
 

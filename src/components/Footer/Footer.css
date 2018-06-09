@@ -1,13 +1,34 @@
 .footer {
-  width: 100%;
-  text-align: center;
-  font-size: 4rem;
-  text-decoration: none;
-  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  height: 100px;
+  height: 150px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+
+.footer::after {
+  content: "";
+  display: block;
+  opacity: .2;
+  position: absolute;
   padding: 20px;
   color: darkblue;
   margin-top: 30px;
   align-self: baseline;
-  background-color: rgb(70, 168, 95);
+  background: black;
+}
+
+.footer * {
+  position: relative;
+  z-index: 2;
+}
+
+.footer h1, .footer h2 {
+  color: white;
+}
+
+.footer h1 {
+  font-size: 30px;
+  padding-top: 140px;
+  margin-top: 0;
 }

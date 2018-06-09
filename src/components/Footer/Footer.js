@@ -1,6 +1,10 @@
 import React from "react";
 import "./Footer.css";
 
-const Footer = props => <h1 className="footer">{props.children}</h1>;
+const Footer = props => (
+  <div className="hero text-center" style={{ backgroundImage: `url(${props.backgroundImage})` }}>
+    {props.children}
+  </div>
+);
 
 export default Footer;
