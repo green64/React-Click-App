@@ -19,7 +19,7 @@ He also explained that functions have to cascade down, so they need to be at the
 
 ## Technology used
 
-In addition to HTML, CSS, and JavaScript, my React Click-a-Pokémon app uses ```create-react-app``` and Yarn to keep the app updated in the browser. 
+In addition to HTML, CSS, and JavaScript, my React Click-a-Pokémon app uses ```create-react-app``` and Yarn to keep the app updated in the browser. g
 
 ## Code excerpts
 
@@ -39,7 +39,8 @@ Now, this is all that sits in the app.js folder:
               />
             ))
           }
-        </Wrapper>```
+        </Wrapper>
+```
 
 ## Conclusions
 
