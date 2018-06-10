@@ -1,7 +1,7 @@
 .card {
   background: #fff;
   border-radius: 2px;
-  flex: 1 5 20%; /* explanation below */
+  flex: 1 5 20%; 
   margin: 1rem;
   padding: 10px;
   position: relative;
@@ -9,17 +9,22 @@
 }
 
 .card > .img-container {
-  flex: 1 5 20%; /* explanation below */
+  flex: 1 5 20%; 
   align-self: center;
   background: white;
 }
 .card > .img-container > img {
   align-content: center;
-  flex: 1 5 20%; /* explanation below */
+  flex: 1 5 20%; 
 }
-
 .card > .content {
-  flex: 1 5 20%; /* explanation below */
+  flex: 1 5 20%; 
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.style_click {
+  border-radius: 4px;
+  border-color: rgb(70, 168, 95);
+
 }

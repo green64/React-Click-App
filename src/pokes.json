@@ -70,11 +70,5 @@
     "name": "Tyrantrum",
     "image":
       "./images/tyrantrum.jpg"
-  },
-  {
-    "id": 13,
-    "name": "Header",
-    "image":
-      "./images/header.jpg"
   }
 ]

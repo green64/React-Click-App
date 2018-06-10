@@ -1,70 +1,87 @@
-// import React, { Component } from 'react';
-import React from "react";
+import React, { Component } from 'react';
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import Footer from "./components/Footer";
 import PokeCard from "./components/PokeCard";
+import Score from "./components/Score";
 import pokes from "./pokes.json";
 
-const App = () => (
-  <div>
-  <Wrapper>
-    <Title>Click-a-Pokémon</Title>
-    <PokeCard
-      name={pokes[0].name}
-      image={pokes[0].image}
-    />
-    <PokeCard
-      name={pokes[1].name}
-      image={pokes[1].image}
-    />
-    <PokeCard
-      name={pokes[2].name}
-      image={pokes[2].image}
-    />
-     <PokeCard
-      name={pokes[3].name}
-      image={pokes[3].image}
-    />
-    <PokeCard
-      name={pokes[4].name}
-      image={pokes[4].image}
-    />
-    <PokeCard
-      name={pokes[5].name}
-      image={pokes[5].image}
-    />
-    <PokeCard
-      name={pokes[6].name}
-      image={pokes[6].image}
-    />
-     <PokeCard
-      name={pokes[7].name}
-      image={pokes[7].image}
-    />
-     <PokeCard
-      name={pokes[8].name}
-      image={pokes[8].image}
-    />
-    <PokeCard
-      name={pokes[9].name}
-      image={pokes[9].image}
-    />
-    <PokeCard
-      name={pokes[10].name}
-      image={pokes[10].image}
-    />
-    <PokeCard
-      name={pokes[11].name}
-      image={pokes[11].image}
-    />
-  </Wrapper>
-  <Footer backgroundImage={pokes[12].image}>
-  <h1>&nbsp;</h1>
-  <h1>&nbsp;</h1>
-  </Footer>
-  </div>
-);
 
+class App extends Component {
+  state = {
+    message: "Click any Pokémon to start. But don't click it twice or you lose!",
+    maxScore: 0,
+    runningScore: 0,
+    pokes: pokes,
+    unselectedPokes: pokes
+  }
 
+  //invoked to load component data
+  componentDidMount() {
+  }
+
+  //function to shuffle pokemon
+  shuffleArray = array => {
+    for (let i = array.length - 1; i > 0; i--) {
+      let j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+  selectPoke = name => {
+    const findPoke = this.state.unselectedPokes.find(item => item.name === name);
+
+    if (findPoke === undefined) {
+      // user selects a pokemon that's already been selected
+      this.setState({
+        message: "You already clicked that Pokémon!",
+        maxScore: (this.state.runningScore > this.state.maxScore) ? this.state.runningScore : this.state.maxScore,
+        runningScore: 0,
+        pokes: pokes,
+        unselectedPokes: pokes
+      });
+    }
+    else {
+      // success to select a new pokemon
+      const newPokes = this.state.unselectedPokes.filter(item => item.name !== name);
+
+      this.setState({
+        message: "You guessed correctly!",
+        runningScore: this.state.runningScore + 1,
+        pokes: pokes,
+        unselectedPokes: newPokes
+      });
+    }
+
+    this.shuffleArray(pokes);
+  };
+  render() {
+    return (
+      <div>
+        <Title backgroundImage="./images/header.jpg">
+          <h1>Click-a-Pokémon</h1>
+        </Title>
+        <Score
+          message={this.state.message}
+          runningScore={this.state.runningScore}
+          maxScore={this.state.maxScore}
+        />
+        <Wrapper>
+          {
+            this.state.pokes.map(poke => (
+              <PokeCard
+                name={poke.name}
+                image={poke.image}
+                selectPoke={this.selectPoke}
+                runningScore={this.state.runningScore}
+              />
+            ))
+          }
+        </Wrapper>
+        <Footer backgroundImage="./images/header.jpg">
+        </Footer>
+      </div>
+    );
+  }
+}
 export default App;
