@@ -6,15 +6,15 @@ const Score = props => (
     <div>
         <ul className="score">
             <li
-                className={props.message.indexOf('wrong') !== -1 ? 
+                className={props.message.indexOf('already guessed') !== -1 ? 
                     "guess-wrong" : 
-                    props.message.indexOf('right') !== -1 ?
+                    props.message.indexOf('keep guessing') !== -1 ?
                         "guess-right" :
                         "reg"}
             >
                 {props.message}
             </li>
-            <li>Score: <span style={{color: "yellow"}}>{props.runningScore}</span> | Max Score: {props.maxScore}</li>
+            <li>Score: <span style={{color: "yellow"}}>{props.runningScore}</span> | High Score: {props.highScore}</li>
         </ul>
     </div>
 );

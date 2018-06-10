@@ -44,6 +44,4 @@ Now, this is all that sits in the app.js folder:
 
 ## Conclusions
 
-We've only scratched the surface of React. It's a confusing library. But I can see the power inherent in its componetizing and familiar JSX syntax.
-
-:neckbeard:
+We've only scratched the surface of React. It's a confusing library. But I can see the power inherent in its componetizing and familiar JSX syntax. :neckbeard:

@@ -1,12 +1,12 @@
 .score {
   background: rgb(70, 168, 95);
-  min-height: 65px;
   width: 100%;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
   color: darkblue;
   font-size: 1.5em;
   font-weight: bold;
+  padding: 10px;
   white-space: nowrap;
 }
 
@@ -23,7 +23,7 @@ ul {
 }
 
 .guess-right {
-  color: green;
+  color: rgb(53, 17, 53);
 }
 
 .guess-wrong {

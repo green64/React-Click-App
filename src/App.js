@@ -10,7 +10,7 @@ import pokes from "./pokes.json";
 class App extends Component {
   state = {
     message: "Click any Pokémon to start. But don't click it twice or you lose!",
-    maxScore: 0,
+    highScore: 0,
     runningScore: 0,
     pokes: pokes,
     unselectedPokes: pokes
@@ -34,8 +34,8 @@ class App extends Component {
     if (findPoke === undefined) {
       // user selects a pokemon that's already been selected
       this.setState({
-        message: "You already clicked that Pokémon!",
-        maxScore: (this.state.runningScore > this.state.maxScore) ? this.state.runningScore : this.state.maxScore,
+        message: "You already guessed that Pokémon!",
+        highScore: (this.state.runningScore > this.state.highScore) ? this.state.runningScore : this.state.highScore,
         runningScore: 0,
         pokes: pokes,
         unselectedPokes: pokes
@@ -46,7 +46,7 @@ class App extends Component {
       const newPokes = this.state.unselectedPokes.filter(item => item.name !== name);
 
       this.setState({
-        message: "You guessed correctly!",
+        message: "Keep guessing!",
         runningScore: this.state.runningScore + 1,
         pokes: pokes,
         unselectedPokes: newPokes
@@ -64,7 +64,7 @@ class App extends Component {
         <Score
           message={this.state.message}
           runningScore={this.state.runningScore}
-          maxScore={this.state.maxScore}
+          highScore={this.state.highScore}
         />
         <Wrapper>
           {
